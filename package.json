@@ -1,6 +1,6 @@
 {
   "name": "@nearai/ui",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A React component library that implements the official NEAR AI design system.",
   "license": "MIT",
   "repository": {
@@ -59,27 +59,27 @@
     }
   },
   "peerDependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "zustand": "<=4.5.5"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19",
+    "zustand": "^5"
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.1.5",
-    "@radix-ui/colors": "^3.0.0",
-    "@radix-ui/react-accordion": "^1.1.2",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-dropdown-menu": "^2.0.6",
-    "@radix-ui/react-focus-scope": "^1.1.0",
-    "@radix-ui/react-roving-focus": "^1.1.0",
-    "@radix-ui/react-slider": "^1.2.1",
-    "@radix-ui/react-switch": "^1.0.3",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-toast": "^1.1.5",
-    "@radix-ui/react-tooltip": "^1.0.7",
-    "downshift": "^9.0.6",
-    "lodash-es": "^4.17.21",
-    "next-themes": "^0.4.3",
-    "repomix": "^0.2.2"
+    "@phosphor-icons/react": "^2",
+    "@radix-ui/colors": "^3",
+    "@radix-ui/react-accordion": "^1",
+    "@radix-ui/react-dialog": "^1",
+    "@radix-ui/react-dropdown-menu": "^2",
+    "@radix-ui/react-focus-scope": "^1",
+    "@radix-ui/react-roving-focus": "^1",
+    "@radix-ui/react-slider": "^1",
+    "@radix-ui/react-switch": "^1",
+    "@radix-ui/react-tabs": "^1",
+    "@radix-ui/react-toast": "^1",
+    "@radix-ui/react-tooltip": "^1",
+    "downshift": "^9",
+    "lodash-es": "^4",
+    "next-themes": "^0.4",
+    "repomix": "^0.3"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.1",
