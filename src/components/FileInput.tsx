@@ -1,5 +1,3 @@
-'use client';
-
 import { FileArrowUp, Paperclip } from '@phosphor-icons/react';
 import type { ChangeEventHandler, CSSProperties, DragEventHandler, FocusEventHandler } from 'react';
 import { forwardRef, useState } from 'react';

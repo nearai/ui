@@ -1,5 +1,3 @@
-'use client';
-
 import type { ComponentPropsWithRef, ReactElement, ReactNode } from 'react';
 import { forwardRef } from 'react';
 

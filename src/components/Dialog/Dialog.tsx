@@ -1,5 +1,3 @@
-'use client';
-
 import { X } from '@phosphor-icons/react';
 import * as Primitive from '@radix-ui/react-dialog';
 import type { ComponentProps, ReactNode } from 'react';

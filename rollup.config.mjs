@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import postcssPresetEnv from 'postcss-preset-env';
+import { addDirective } from 'rollup-plugin-add-directive';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import scss from 'rollup-plugin-scss';
@@ -15,20 +16,12 @@ import concat from './rollup-plugin-concat.mjs';
 const options = [
   {
     input: './src/index.ts',
-    output: [
-      {
-        file: './dist/index.esm.js',
-        format: 'esm',
-        sourcemap: false,
-        inlineDynamicImports: true,
-      },
-      {
-        file: './dist/index.cjs.js',
-        format: 'cjs',
-        sourcemap: false,
-        inlineDynamicImports: true,
-      },
-    ],
+    output: {
+      file: './dist/index.js',
+      format: 'esm',
+      sourcemap: false,
+      inlineDynamicImports: true,
+    },
     plugins: [
       json(),
       scss({
@@ -42,7 +35,11 @@ const options = [
       resolve({ browser: true }),
       commonjs(),
       typescript(),
-      terser(),
+      terser({
+        compress: {
+          directives: false,
+        },
+      }),
       postcss({
         extract: 'modules.css',
         modules: true,
@@ -62,24 +59,17 @@ const options = [
         outputFile: './dist/styles.css',
       }),
       visualizer(),
+      addDirective(),
     ],
   },
   {
     input: './src/utils/index.ts',
-    output: [
-      {
-        file: './dist/utils/index.esm.js',
-        format: 'esm',
-        sourcemap: false,
-        inlineDynamicImports: true,
-      },
-      {
-        file: './dist/utils/index.cjs.js',
-        format: 'cjs',
-        sourcemap: false,
-        inlineDynamicImports: true,
-      },
-    ],
+    output: {
+      file: './dist/utils/index.js',
+      format: 'esm',
+      sourcemap: false,
+      inlineDynamicImports: true,
+    },
     plugins: [peerDepsExternal(), resolve({ browser: true }), commonjs(), typescript(), terser()],
   },
 ];

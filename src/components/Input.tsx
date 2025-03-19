@@ -1,5 +1,3 @@
-'use client';
-
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import type { ComponentPropsWithRef, FormEventHandler, ReactElement } from 'react';
 import { forwardRef } from 'react';

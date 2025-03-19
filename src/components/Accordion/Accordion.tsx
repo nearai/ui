@@ -1,5 +1,3 @@
-'use client';
-
 import { CaretDown } from '@phosphor-icons/react';
 import * as Primitive from '@radix-ui/react-accordion';
 import type { ComponentProps } from 'react';

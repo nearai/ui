@@ -4,9 +4,9 @@ A React component library that implements the official design system of NEAR AI.
 
 ## Required Peer Dependencies
 
-**React 18**
+**React 18 || 19**
 
-**Zustand 4** - Our `openToast()` method is able to work in any context due to relying on a Zustand global store.
+**Zustand 5** - Our `openToast()` method is able to work in any context due to relying on a Zustand global store.
 
 ## Installation & Setup
 
@@ -18,7 +18,7 @@ pnpm add @nearai/ui
 In your root `layout.tsx` file, wrap your application with the `<NearAiUiProvider>` and pass in your framework's `<Link>` component and router methods. You'll also want to include the `<Toaster />` component to display toasts when calling `openToast()`.
 
 ```tsx
-'use client';
+
 
 import '@nearai/ui/styles.css';
 

@@ -1,5 +1,3 @@
-'use client';
-
 import { CaretCircleDown, CaretCircleUp } from '@phosphor-icons/react';
 import type {
   ComponentPropsWithRef,

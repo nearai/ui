@@ -1,5 +1,3 @@
-'use client';
-
 import { CheckCircle, type Icon, Info, Warning } from '@phosphor-icons/react';
 
 import { Button } from '../Button';

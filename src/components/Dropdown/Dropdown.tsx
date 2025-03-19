@@ -1,5 +1,3 @@
-'use client';
-
 import { CaretDown } from '@phosphor-icons/react';
 import * as Primitive from '@radix-ui/react-dropdown-menu';
 import type { ComponentProps, MouseEventHandler, ReactNode } from 'react';

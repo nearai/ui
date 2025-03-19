@@ -1,5 +1,3 @@
-'use client';
-
 import * as Primitive from '@radix-ui/react-switch';
 import type { ComponentProps, ReactElement } from 'react';
 import { forwardRef } from 'react';

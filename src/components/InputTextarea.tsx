@@ -1,5 +1,3 @@
-'use client';
-
 import type { ComponentPropsWithRef, KeyboardEventHandler } from 'react';
 import { forwardRef } from 'react';
 
