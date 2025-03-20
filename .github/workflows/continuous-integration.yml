@@ -12,35 +12,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 10.6.5
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: 22
+          cache: 'npm'
       - name: Install dependencies
-        run: pnpm install
+        run: npm i
       - name: Format
-        run: pnpm format
+        run: npm run format
       - name: Lint
-        run: pnpm lint:strict
+        run: npm run lint:strict
 
   test:
     name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 10.6.5
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: 22
+          cache: 'npm'
       - name: Install dependencies
-        run: pnpm install
+        run: npm i
       - name: Check types
-        run: pnpm ts:check
+        run: npm run ts:check
       - name: Test
-        run: pnpm test
+        run: npm run test

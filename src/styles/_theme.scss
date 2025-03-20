@@ -9,17 +9,18 @@
 @use 'node_modules/@radix-ui/colors/red.css';
 @use 'node_modules/@radix-ui/colors/red-dark.css';
 
-@import './variables';
+@use './variables';
 
 :root {
   --shadow-card: 0px 4px 8px 0px rgba(0, 0, 0, 0.06);
   --shadow-card-with-outline: 0px 0px 0px 1px var(--sand-4), var(--shadow-card);
 
   --transition-speed: 200ms;
-  --transitions: color var(--transition-speed), border-color var(--transition-speed),
-    background-color var(--transition-speed), box-shadow var(--transition-speed), opacity var(--transition-speed),
-    transform var(--transition-speed), fill var(--transition-speed), outline-color var(--transition-speed),
-    outline-width var(--transition-speed), width var(--transition-speed), height var(--transition-speed);
+  --transitions:
+    color var(--transition-speed), border-color var(--transition-speed), background-color var(--transition-speed),
+    box-shadow var(--transition-speed), opacity var(--transition-speed), transform var(--transition-speed),
+    fill var(--transition-speed), outline-color var(--transition-speed), outline-width var(--transition-speed),
+    width var(--transition-speed), height var(--transition-speed);
 
   --gap-none: 0;
   --gap-xs: 0.25rem;
@@ -58,7 +59,7 @@
   --text-hero-xl: 500 100px/1 'FK Grotesk', 'Mona Sans', sans-serif;
 
   & {
-    @media (max-width: $tabletBreakpointMaxWidth) {
+    @media (max-width: variables.$tabletBreakpointMaxWidth) {
       --gap-l: 1.5rem;
       --gap-xl: 2rem;
       --gap-2xl: 4rem;
@@ -75,7 +76,7 @@
   }
 
   & {
-    @media (max-width: $phoneBreakpointMaxWidth) {
+    @media (max-width: variables.$phoneBreakpointMaxWidth) {
       --gap-2xl: 3rem;
       --gap-3xl: 4rem;
     }

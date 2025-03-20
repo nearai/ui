@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use '../../styles/variables';
 
 .overlay {
   position: fixed;
@@ -22,7 +22,7 @@
   }
 
   & {
-    @media (max-width: $phoneBreakpointMaxWidth) {
+    @media (max-width: variables.$phoneBreakpointMaxWidth) {
       padding: var(--gap-s);
     }
   }
@@ -89,7 +89,7 @@
   }
 
   & {
-    @media (max-width: $phoneBreakpointMaxWidth) {
+    @media (max-width: variables.$phoneBreakpointMaxWidth) {
       margin-top: 0;
       padding: var(--gap-m);
     }
@@ -109,7 +109,7 @@
   padding: var(--gap-m) var(--gap-l) var(--gap-l) var(--gap-l);
 
   & {
-    @media (max-width: $phoneBreakpointMaxWidth) {
+    @media (max-width: variables.$phoneBreakpointMaxWidth) {
       padding: var(--gap-m);
       gap: var(--gap-m);
     }

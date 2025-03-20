@@ -10,16 +10,13 @@ A React component library that implements the official design system of NEAR AI.
 
 ## Installation & Setup
 
-```bash
-pnpm add zustand
-pnpm add @nearai/ui
+```shell
+npm i @nearai/ui
 ```
 
 In your root `layout.tsx` file, wrap your application with the `<NearAiUiProvider>` and pass in your framework's `<Link>` component and router methods. You'll also want to include the `<Toaster />` component to display toasts when calling `openToast()`.
 
 ```tsx
-
-
 import '@nearai/ui/styles.css';
 
 import Link from 'next/link';
@@ -65,18 +62,19 @@ Please refer to `README.md` files in `src/components` for examples and documenta
 
 ## Contributing
 
-This project requires [pnpm](https://pnpm.io/installation) version `10.6.5`. The strict version requirement will help keep our lockfile consistent as more developers contribute. Make sure you have the correct version of `pnpm` installed:
+Install Node, NPM, and dependencies:
 
-```bash
-pnpm -v # This should output 10.6.5
-npm install -g pnpm@10.6.5 # Install the correct version if needed
+```shell
+nvm install
+nvm use
+npm i
 ```
 
-Run these commands to begin local development and watch for changes:
+Begin local development and watch for changes:
 
-```bash
-pnpm dev
-pnpm test:watch
+```shell
+npm run dev
+npm run test:watch
 ```
 
 - Create a branch off of `main`
@@ -88,18 +86,18 @@ pnpm test:watch
 Follow these steps to preview local changes to the UI library within any project that depends on the library:
 
 - Have your project and the UI library cloned as siblings. EG: `projects/cool-project` and `projects/nearai-ui`.
-- Inside `nearai-ui`, run `pnpm dev`.
-- Inside your project folder, run `pnpm add file:../nearai-ui`.
+- Inside `nearai-ui`, run `npm run dev`.
+- Inside your project folder, run `npm i file:../nearai-ui`.
 - After making any changes to `nearai-ui`, you will need to restart your project's development server for the component changes to appear locally within your project.
 - Once you're done testing changes, make sure you revert the changes in your project's `package.json` and lock file so that you're no longer referencing the local file protocol (eg: `file:../nearai-ui`).
 
-_NOTE: Due to this library having peer dependencies, `pnpm link` isn't compatible - that's why we have to rely on using `file:` instead._
+_NOTE: Due to this library having peer dependencies, `npm link` isn't compatible - that's why we have to rely on using `file:` instead._
 
 ## Viewing Package Statistics
 
-After you've run `pnpm build` or `pnpm dev`, a `stats.html` file will be generated to show a visual breakdown of the size of the library based on source code and dependencies. You can open this in your browser by running:
+After you've run `npm run build` or `npm run dev`, a `stats.html` file will be generated to show a visual breakdown of the size of the library based on source code and dependencies. You can open this in your browser by running:
 
-```bash
+```shell
 open ./stats.html
 ```
 
