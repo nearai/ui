@@ -15,6 +15,10 @@ import concat from './rollup-plugin-concat.mjs';
 /** @type {import('rollup').RollupOptions} */
 const options = [
   {
+    onwarn: (warning, defaultHandler) => {
+      if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return;
+      defaultHandler(warning);
+    },
     input: './src/index.ts',
     output: {
       file: './dist/index.js',
@@ -28,8 +32,9 @@ const options = [
         fileName: 'globals.css',
         exclude: ['/**/*.module.scss'],
         failOnError: true,
-        verbose: true,
+        verbose: false,
         outputStyle: 'compressed',
+        silenceDeprecations: ['legacy-js-api'], // https://github.com/egoist/rollup-plugin-postcss/issues/463
       }),
       peerDepsExternal(),
       resolve({ browser: true }),
@@ -53,6 +58,12 @@ const options = [
             },
           }),
         ],
+        use: {
+          sass: {
+            // https://github.com/egoist/rollup-plugin-postcss/issues/463
+            silenceDeprecations: ['legacy-js-api'],
+          },
+        },
       }),
       concat({
         files: ['./dist/globals.css', './dist/modules.css'],

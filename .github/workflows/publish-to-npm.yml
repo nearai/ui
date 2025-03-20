@@ -10,19 +10,16 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10.6.5
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
-        run: pnpm install
+        run: npm i
       - name: Lint and test
-        run: pnpm pre-publish
+        run: npm run pre-publish
       - name: Build
-        run: pnpm build
+        run: npm run build
       - name: Publish
         run: npm publish --provenance --access public
         env:

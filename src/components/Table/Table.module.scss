@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use '../../styles/variables';
 
 .root {
   --table-border-radius: 6px;
@@ -23,7 +23,7 @@
   }
 
   & {
-    @media (max-width: $tabletBreakpointMaxWidth) {
+    @media (max-width: variables.$tabletBreakpointMaxWidth) {
       margin-inline: calc(var(--section-padding-x) * -1);
       width: auto;
       border-radius: 0;

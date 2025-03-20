@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@use '../styles/variables';
 
 .wrapper {
   display: flex;
@@ -6,7 +6,7 @@
   gap: var(--gap-3xl);
 
   & {
-    @media (max-width: $tabletBreakpointMaxWidth) {
+    @media (max-width: variables.$tabletBreakpointMaxWidth) {
       align-items: flex-start;
       flex-direction: column;
       gap: var(--gap-xl);
@@ -29,7 +29,7 @@
   }
 
   & {
-    @media (max-width: $tabletBreakpointMaxWidth) {
+    @media (max-width: variables.$tabletBreakpointMaxWidth) {
       max-width: 100%;
       order: unset !important;
     }

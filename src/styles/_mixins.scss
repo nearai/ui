@@ -1,4 +1,4 @@
-@import './variables';
+@use './variables';
 
 @mixin breakpointProperty($variable, $property, $default) {
   & {
@@ -10,13 +10,13 @@
   }
 
   & {
-    @media (max-width: $tabletBreakpointMaxWidth) {
+    @media (max-width: variables.$tabletBreakpointMaxWidth) {
       #{$property}: var(--#{$variable}-tablet, var(--#{$variable}));
     }
   }
 
   & {
-    @media (max-width: $phoneBreakpointMaxWidth) {
+    @media (max-width: variables.$phoneBreakpointMaxWidth) {
       #{$property}: var(--#{$variable}-phone, var(--#{$variable}-tablet, var(--#{$variable})));
     }
   }
