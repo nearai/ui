@@ -24,8 +24,7 @@
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:strict": "eslint \"**/*.{ts,tsx}\" --max-warnings 0",
-    "pre-commit": "npm run format && npm run lint:strict && npm run ts:check",
-    "pre-publish": "npm run pre-commit && npm run test",
+    "pre-publish": "npm run format && npm run lint:strict && npm run ts:check && npm run test",
     "prepare": "husky",
     "repomix": "repomix --include 'src/**/*.ts,src/**/*.tsx,src/**/*.md'",
     "test": "vitest run",
@@ -119,6 +118,7 @@
   },
   "lint-staged": {
     "./src/**/*.{ts,tsx}": [
+      "bash -c 'npm run ts:check'",
       "eslint --fix --max-warnings 0"
     ],
     "./src/**/*": [
