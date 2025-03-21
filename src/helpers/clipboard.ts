@@ -1,5 +1,7 @@
 import { openToast } from '../components/Toast';
 
+const foo = 'foo';
+
 export async function copyTextToClipboard(content: string, description?: string) {
   try {
     await navigator.clipboard.writeText(content);
