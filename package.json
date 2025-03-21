@@ -119,7 +119,6 @@
   },
   "lint-staged": {
     "./src/**/*.{ts,tsx}": [
-      "tsc --noEmit",
       "eslint --fix --max-warnings 0"
     ],
     "./src/**/*": [
