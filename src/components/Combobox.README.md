@@ -38,12 +38,7 @@ import { Controller } from 'react-hook-form';
     required: 'Please select an option',
   }}
   render={({ field, fieldState }) => (
-    <Combobox
-      label="My Combobox"
-      items={items}
-      error={fieldState.error?.message}
-      {...field}
-    />
+    <Combobox label="My Combobox" items={items} error={fieldState.error?.message} {...field} />
   )}
 />;
 ```

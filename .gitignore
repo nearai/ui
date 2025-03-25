@@ -45,3 +45,5 @@ stats.html
 
 **/.eslintcache
 .vercel
+
+*storybook.log

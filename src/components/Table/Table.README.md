@@ -96,12 +96,7 @@ If you have a cell that contains something like a `Button` and you'd like the ce
 <Table.Cell style={{ width: '1px' }}>
   <Flex>
     <Button label="Edit" icon={<Pencil />} size="small" />
-    <Button
-      label="Delete"
-      icon={<Trash />}
-      size="small"
-      variant="destructive"
-    />
+    <Button label="Delete" icon={<Trash />} size="small" variant="destructive" />
   </Flex>
 </Table.Cell>
 ```

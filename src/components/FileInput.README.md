@@ -38,12 +38,7 @@ import { Controller } from 'react-hook-form';
     required: 'Please select an image',
   }}
   render={({ field, fieldState }) => (
-    <FileInput
-      label="Event Artwork"
-      accept="image/*"
-      error={fieldState.error?.message}
-      {...field}
-    />
+    <FileInput label="Event Artwork" accept="image/*" error={fieldState.error?.message} {...field} />
   )}
 />;
 ```

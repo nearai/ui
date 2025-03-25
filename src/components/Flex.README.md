@@ -47,12 +47,7 @@ By default, `flex` renders a wrapping `<div>` tag. You can instead adjust it to 
 Sometimes you need to apply adjustments to the layout as the screen size gets smaller. You can do that by applying overrides for smaller screens with the `phone` and `tablet` props.
 
 ```tsx
-<Flex
-  align="center"
-  gap="xl"
-  tablet={{ align: 'flex-start', gap: 'l' }}
-  phone={{ direction: 'column' }}
->
+<Flex align="center" gap="xl" tablet={{ align: 'flex-start', gap: 'l' }} phone={{ direction: 'column' }}>
   <Text>Item 1</Text>
   <Text>Item 2</Text>
 </Flex>

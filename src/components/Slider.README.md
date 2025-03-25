@@ -25,14 +25,7 @@ import { Slider } from '~/components/lib/Slider';
   control={form.control}
   name="mySlider"
   render={({ field, fieldState }) => (
-    <Slider
-      label="My Slider"
-      name="mySlider"
-      max={2}
-      min={0}
-      step={0.01}
-      {...field}
-    />
+    <Slider label="My Slider" name="mySlider" max={2} min={0} step={0.01} {...field} />
   )}
 />
 ```

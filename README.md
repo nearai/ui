@@ -32,17 +32,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
       </head>
 
       <body>
         <NearAiUiProvider
           value={{
             Link,
-            useRouter
+            useRouter,
           }}
         >
           <Toaster />
@@ -80,6 +77,14 @@ npm run test:watch
 - Create a branch off of `main`
 - Test your local changes
 - Push a PR for review
+
+## Storybook
+
+Boot up local [Storybook](https://storybook.js.org) server and watch for changes:
+
+```
+npm run storybook
+```
 
 ## Test Local Changes
 
