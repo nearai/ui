@@ -52,10 +52,7 @@ For smaller pages that might not have much content, you can use the alternative 
   <Section grow="available" style={{ background: 'var(--cyan-4)' }}>
     <Flex gap="m" stack style={{ margin: 'auto' }}>
       <Text as="h1">My Header</Text>
-      <Text>
-        I am centered within my section and take up all the remaining vertical
-        screen space!
-      </Text>
+      <Text>I am centered within my section and take up all the remaining vertical screen space!</Text>
     </Flex>
   </Section>
 

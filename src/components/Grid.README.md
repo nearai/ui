@@ -35,12 +35,7 @@ Sometimes you need to apply adjustments to the layout as the screen size gets sm
 Switch the defined `columns` when the screen is small enough to be considered a `tablet` or `phone`:
 
 ```tsx
-<Grid
-  columns="1fr 1fr 200px 100px"
-  gap="xl"
-  tablet={{ columns: '1fr 1fr', gap: 'l' }}
-  phone={{ columns: '1fr' }}
->
+<Grid columns="1fr 1fr 200px 100px" gap="xl" tablet={{ columns: '1fr 1fr', gap: 'l' }} phone={{ columns: '1fr' }}>
   <Card>Card 1</Card>
   <Card>Card 2</Card>
   <Card>Card 3</Card>

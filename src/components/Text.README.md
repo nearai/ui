@@ -17,8 +17,5 @@ import { Text } from '~/components/lib/Text';
 ## Line Clamp
 
 ```tsx
-<Text clampLines={2}>
-  This is some super duper long text that will be clamped to two lines
-  dynamically.
-</Text>
+<Text clampLines={2}>This is some super duper long text that will be clamped to two lines dynamically.</Text>
 ```
