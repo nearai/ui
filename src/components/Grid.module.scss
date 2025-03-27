@@ -1,9 +1,0 @@
-@use '../styles/mixins';
-
-.grid {
-  display: grid;
-  @include mixins.breakpointProperty('grid-align', 'align-items', normal);
-  @include mixins.breakpointProperty('grid-columns', 'grid-template-columns', 1fr);
-  @include mixins.breakpointProperty('grid-gap', 'gap', 0);
-  @include mixins.breakpointProperty('grid-justify', 'justify-content', normal);
-}

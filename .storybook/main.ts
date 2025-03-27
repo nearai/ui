@@ -18,7 +18,8 @@ const config: StorybookConfig = {
       // https://github.com/styleguidist/react-docgen-typescript
 
       shouldExtractLiteralValuesFromEnum: true,
-      shouldExtractValuesFromUnion: true,
+      shouldRemoveUndefinedFromOptional: true,
+      // shouldExtractValuesFromUnion: true,
 
       propFilter: (prop) => {
         if (prop.parent) {
@@ -28,6 +29,9 @@ const config: StorybookConfig = {
             }
             return false;
           }
+        }
+        if (['style', 'className', 'children'].includes(prop.name)) {
+          return false;
         }
         return true;
       },

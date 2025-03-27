@@ -1,0 +1,18 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './Slider.stories';
+
+<Meta of={Stories} name="React Hook Form" />
+
+# Slider + React Hook Form
+
+```tsx
+import { Controller } from 'react-hook-form';
+import { Slider } from '@nearai/ui';
+
+<Controller
+  control={form.control}
+  name="mySlider"
+  render={({ field, fieldState }) => <Slider label="My Slider" max={2} min={0} step={0.1} {...field} />}
+/>;
+```

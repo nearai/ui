@@ -1,0 +1,30 @@
+@use '../../styles/variables';
+
+.breakpoint {
+  flex-shrink: 0;
+
+  &[data-show='sidebar-small-screen'],
+  &[data-show='smaller-than-desktop'] {
+    @media (min-width: calc(#{variables.$tabletBreakpointMaxWidth} + 1px)) {
+      display: none;
+    }
+  }
+
+  &[data-show='smaller-than-tablet'] {
+    @media (min-width: calc(#{variables.$tabletBreakpointMaxWidth} + 1px)) {
+      display: none;
+    }
+  }
+
+  &[data-show='larger-than-phone'] {
+    @media (max-width: variables.$phoneBreakpointMaxWidth) {
+      display: none;
+    }
+  }
+
+  &[data-show='larger-than-tablet'] {
+    @media (max-width: variables.$tabletBreakpointMaxWidth) {
+      display: none;
+    }
+  }
+}

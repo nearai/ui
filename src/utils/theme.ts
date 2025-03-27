@@ -178,3 +178,41 @@ export function breakpointPropToCss<T>(
 
   return variables;
 }
+
+// Using CSSProperties['alignItems'] causes Storybook docgen to break
+export type AlignItems =
+  | 'inherit'
+  | 'initial'
+  | 'revert'
+  | 'revert-layer'
+  | 'unset'
+  | 'center'
+  | 'end'
+  | 'flex-end'
+  | 'flex-start'
+  | 'self-end'
+  | 'self-start'
+  | 'start'
+  | 'baseline'
+  | 'normal'
+  | 'stretch';
+
+// Using CSSProperties['justifyContent'] causes Storybook docgen to break
+export type JustifyContent =
+  | 'inherit'
+  | 'initial'
+  | 'revert'
+  | 'revert-layer'
+  | 'unset'
+  | 'center'
+  | 'end'
+  | 'flex-end'
+  | 'flex-start'
+  | 'start'
+  | 'normal'
+  | 'stretch'
+  | 'space-around'
+  | 'space-between'
+  | 'space-evenly'
+  | 'left'
+  | 'right';

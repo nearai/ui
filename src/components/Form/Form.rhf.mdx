@@ -1,0 +1,30 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './Form.stories';
+
+<Meta of={Stories} name="React Hook Form" />
+
+# Form + React Hook Form
+
+````tsx
+import { type SubmitHandler, useForm } from 'react-hook-form';
+import { Form } from '@nearai/ui';
+
+type FormSchema = {
+  name: string;
+  email: string;
+};
+
+const form = useForm<FormSchema>();
+
+const onSubmit: SubmitHandler<FormSchema> = async (data) => {
+  console.log(data);
+};
+
+...
+
+<Form onSubmit={form.handleSubmit(onSubmit)}>
+  ...
+</Form>
+```../Form.stories
+````
