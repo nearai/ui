@@ -3,7 +3,7 @@
 Implemented via Radix primitives: https://www.radix-ui.com/docs/primitives/components/slider
 
 ```tsx
-import { Slider } from '~/components/lib/Slider';
+import { Slider } from '@nearai/ui';
 
 ...
 

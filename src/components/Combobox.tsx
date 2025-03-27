@@ -1,4 +1,4 @@
-import { CaretDown, CheckCircle, Circle } from '@phosphor-icons/react';
+import { CaretDown, CheckCircle, Circle } from '@phosphor-icons/react/dist/ssr';
 import { useCombobox } from 'downshift';
 import type {
   CSSProperties,

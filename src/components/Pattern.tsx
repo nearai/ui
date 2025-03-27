@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 
-import { ThemeColor } from '../utils/theme';
+import type { ThemeColor } from '../utils/theme';
 import s from './Pattern.module.scss';
 
 type Props = {

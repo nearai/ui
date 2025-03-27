@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'next-themes';
-import { type ComponentProps, createContext, ForwardedRef, type ReactNode, useContext } from 'react';
+import type { ForwardedRef } from 'react';
+import { type ComponentProps, createContext, type ReactNode, useContext } from 'react';
 
 type NearAiUi = {
   forcedTheme?: 'dark' | 'light';

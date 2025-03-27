@@ -1,4 +1,5 @@
-import { ComponentProps, ComponentPropsWithRef, type CSSProperties, forwardRef } from 'react';
+import type { ComponentProps, ComponentPropsWithRef } from 'react';
+import { type CSSProperties, forwardRef } from 'react';
 
 import { useNearAiUi } from '../context/NearAiUi';
 import { type ThemeColor, type ThemeFontSize } from '../utils/theme';

@@ -1,4 +1,4 @@
-import { MagnifyingGlass } from '@phosphor-icons/react';
+import { MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
 import type { ComponentPropsWithRef, FormEventHandler, ReactElement } from 'react';
 import { forwardRef } from 'react';
 

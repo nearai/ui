@@ -1,7 +1,7 @@
 # Badge
 
 ```tsx
-import { Badge } from '~/components/lib/Badge';
+import { Badge } from '@nearai/ui';
 
 ...
 

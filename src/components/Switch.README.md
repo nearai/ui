@@ -7,7 +7,7 @@ Implemented via Radix primitives: https://www.radix-ui.com/docs/primitives/compo
 If you don't want to display a label alongside the switch, use an `aria-label` attribute to describe the switch:
 
 ```tsx
-import { Switch } from '~/components/lib/Switch';
+import { Switch } from '@nearai/ui';
 
 ...
 
@@ -19,8 +19,8 @@ import { Switch } from '~/components/lib/Switch';
 If you wrap the switch with a `<label>` HTML tag, you don't need to use `aria-label`:
 
 ```tsx
-import { Switch } from '~/components/lib/Switch';
-import { Flex } from '~/components/lib/Flex';
+import { Switch } from '@nearai/ui';
+import { Flex } from '@nearai/ui';
 
 ...
 
@@ -38,7 +38,7 @@ import { Flex } from '~/components/lib/Flex';
 ## With an Icon
 
 ```tsx
-import { Moon, Sun } from '@phosphor-icons/react';
+import { Moon, Sun } from '@phosphor-icons/react/dist/ssr';
 
 ...
 

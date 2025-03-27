@@ -1,7 +1,7 @@
 # Card
 
 ```tsx
-import { Card } from '~/components/lib/Card';
+import { Card } from '@nearai/ui';
 
 ...
 

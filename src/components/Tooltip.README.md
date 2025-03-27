@@ -3,8 +3,8 @@
 Built with the Radix UI Tooltip primitive: https://www.radix-ui.com/primitives/docs/components/tooltip
 
 ```tsx
-import { Button } from '~/components/lib/Button';
-import { Tooltip } from '~/components/lib/Tooltip';
+import { Button } from '@nearai/ui';
+import { Tooltip } from '@nearai/ui';
 
 ...
 

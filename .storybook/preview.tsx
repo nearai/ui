@@ -1,8 +1,10 @@
-import React from 'react';
-import type { Preview } from '@storybook/react';
-import { NearAiUiProvider } from '../src';
-import { theme } from './theme';
 import './styles.scss';
+
+import type { Preview } from '@storybook/react';
+import React from 'react';
+
+import { NearAiUiProvider, Toaster } from '../src';
+import { theme } from './theme';
 
 const useRouter = () => {
   return {
@@ -62,6 +64,7 @@ const preview: Preview = {
           useRouter: useRouter,
         }}
       >
+        <Toaster />
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <Story />
       </NearAiUiProvider>

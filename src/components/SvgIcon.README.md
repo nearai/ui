@@ -1,8 +1,8 @@
 # SVG Icon
 
 ```tsx
-import { SvgIcon } from '~/components/lib/SvgIcon';
-import { Horse } from '@phosphor-icons/react';
+import { SvgIcon } from '@nearai/ui';
+import { Horse } from '@phosphor-icons/react/dist/ssr';
 
 ...
 

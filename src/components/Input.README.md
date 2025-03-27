@@ -1,7 +1,7 @@
 # Input
 
 ```tsx
-import { Input } from '~/components/lib/Input';
+import { Input } from '@nearai/ui';
 
 ...
 

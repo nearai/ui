@@ -1,4 +1,4 @@
-import { CheckCircle, WarningCircle } from '@phosphor-icons/react';
+import { CheckCircle, WarningCircle } from '@phosphor-icons/react/dist/ssr';
 
 import { type ThemeInputVariant } from '../utils/theme';
 import { Flex } from './Flex';

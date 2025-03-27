@@ -5,8 +5,8 @@ This component helps solve common flex layout requirements. If you need a more s
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ```tsx
-import { Flex } from '~/components/lib/Flex';
-import { Text } from '~/components/lib/Text';
+import { Flex } from '@nearai/ui';
+import { Text } from '@nearai/ui';
 
 ...
 

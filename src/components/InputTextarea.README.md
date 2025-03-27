@@ -1,7 +1,7 @@
 # Input Textarea
 
 ```tsx
-import { InputTextarea } from '~/components/lib/InputTextarea';
+import { InputTextarea } from '@nearai/ui';
 
 ...
 

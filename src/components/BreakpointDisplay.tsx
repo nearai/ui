@@ -1,4 +1,5 @@
-import { CSSProperties, type ReactNode } from 'react';
+import type { CSSProperties } from 'react';
+import { type ReactNode } from 'react';
 
 import s from './BreakpointDisplay.module.scss';
 

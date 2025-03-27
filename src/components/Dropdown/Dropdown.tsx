@@ -1,4 +1,4 @@
-import { CaretDown } from '@phosphor-icons/react';
+import { CaretDown } from '@phosphor-icons/react/dist/ssr';
 import * as Primitive from '@radix-ui/react-dropdown-menu';
 import type { ComponentProps, MouseEventHandler, ReactNode } from 'react';
 import { forwardRef } from 'react';
@@ -17,7 +17,7 @@ export const Content = forwardRef<
   ComponentProps<typeof Primitive.Content> & {
     maxHeight?: string;
   }
->(({ children, maxHeight, ...props }, ref) => {
+>(function DropdownContent({ children, maxHeight, ...props }, ref) {
   return (
     <Primitive.Portal>
       <Primitive.Content className={s.content} sideOffset={6} ref={ref} {...props}>
@@ -31,10 +31,9 @@ export const Content = forwardRef<
     </Primitive.Portal>
   );
 });
-Content.displayName = 'Content';
 
 export const SubContent = forwardRef<HTMLDivElement, ComponentProps<typeof Primitive.SubContent>>(
-  ({ children, ...props }, ref) => {
+  function DropdownSubContent({ children, ...props }, ref) {
     return (
       <Primitive.Portal>
         <Primitive.SubContent className={s.content} sideOffset={14} ref={ref} {...props}>
@@ -44,12 +43,11 @@ export const SubContent = forwardRef<HTMLDivElement, ComponentProps<typeof Primi
     );
   },
 );
-SubContent.displayName = 'SubContent';
 
 export const Item = forwardRef<
   HTMLDivElement,
   ComponentProps<typeof Primitive.Item> & { external?: boolean; href?: string }
->(({ external, href, ...props }, ref) => {
+>(function DropdownItem({ external, href, ...props }, ref) {
   const { useRouter } = useNearAiUi();
   const router = useRouter();
 
@@ -65,7 +63,6 @@ export const Item = forwardRef<
 
   return <Primitive.Item className={s.item} ref={ref} {...props} onClick={onClick} />;
 });
-Item.displayName = 'Item';
 
 export const Indicator = () => {
   return <SvgIcon icon={<CaretDown weight="bold" />} className={s.indicator} size="stretch" />;

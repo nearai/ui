@@ -1,12 +1,19 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './Dropdown.stories';
+
+<Meta of={Stories} />
+
 # Dropdown
 
-Built with the Radix UI Dropdown Menu primitive: https://www.radix-ui.com/primitives/docs/components/dropdown-menu
+Built with the [Radix UI Dropdown Menu](https://www.radix-ui.com/primitives/docs/components/dropdown-menu) primitive.
 
-A more complex example when needing to implement sub dropdown menus:
+<Canvas of={Stories.Primary} />
+
+## Example
 
 ```tsx
-import { Horse, Pizza } from '@phosphor-icons/react';
-import { Button, Dropdown, SvgIcon } from '~/components/lib/Dropdown';
+import { Button, Dropdown, SvgIcon } from '@nearai/ui';
 
 ...
 

@@ -1,4 +1,5 @@
-import { CheckCircle, type Icon, Info, Warning } from '@phosphor-icons/react';
+import { type Icon } from '@phosphor-icons/react';
+import { CheckCircle, Info, Warning } from '@phosphor-icons/react/dist/ssr';
 
 import { Button } from '../Button';
 import { Flex } from '../Flex';
@@ -34,7 +35,7 @@ export const Toaster = () => {
             onOpenChange={(open) => onOpenChange(open, toast)}
             key={toast.id}
           >
-            <T.Icon icon={<IconSvg weight="bold" />} />
+            <T.Icon icon={<IconSvg />} />
 
             <Flex direction="column" gap="xs">
               {toast.title && <T.Title>{toast.title}</T.Title>}

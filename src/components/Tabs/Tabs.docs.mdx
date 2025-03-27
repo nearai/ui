@@ -1,13 +1,21 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './Tabs.stories';
+
+<Meta of={Stories} />
+
 # Tabs
 
-Built with the Radix UI Tabs primitive: https://www.radix-ui.com/primitives/docs/components/tabs
+Built with the [Radix UI Tabs](https://www.radix-ui.com/primitives/docs/components/tabs) primitive.
+
+<Canvas of={Stories.Primary} />
 
 ## Links
 
 This approach allows you to sync the active tab with the URL. This should be the preferred approach for most tabs.
 
 ```tsx
-import { Tabs } from '~/components/lib/Tabs';
+import { Tabs } from '@nearai/ui';
 import { useRouter } from 'next/navigation';
 
 ...
@@ -42,8 +50,10 @@ const selectedTab = router.query.tab as string;
 
 ## Buttons
 
+A simpler approach when syncing with URL state isn't desired.
+
 ```tsx
-import { Tabs } from '~/components/lib';
+import { Tabs } from '@nearai/ui'';
 ...
 
 <Tabs.Root>

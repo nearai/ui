@@ -1,7 +1,7 @@
 # Text
 
 ```tsx
-import { Text } from '~/components/lib/Text';
+import { Text } from '@nearai/ui';
 
 ...
 

@@ -1,4 +1,4 @@
-import { CaretCircleDown, CaretCircleUp } from '@phosphor-icons/react';
+import { CaretCircleDown, CaretCircleUp } from '@phosphor-icons/react/dist/ssr';
 import type {
   ComponentPropsWithRef,
   HTMLAttributeAnchorTarget,
@@ -25,7 +25,7 @@ type RootProps = {
 
 const TableContext = createContext<RootProps | undefined>(undefined);
 
-export const Root = forwardRef<HTMLTableElement, RootProps>(({ className = '', ...props }, ref) => {
+export const Root = forwardRef<HTMLTableElement, RootProps>(function TableRoot({ className = '', ...props }, ref) {
   const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -98,44 +98,45 @@ export const Root = forwardRef<HTMLTableElement, RootProps>(({ className = '', .
     </TableContext.Provider>
   );
 });
-Root.displayName = 'Root';
 
 type HeadProps = ComponentPropsWithRef<'thead'> & {
   sticky?: boolean;
 };
 
-export const Head = forwardRef<HTMLTableSectionElement, HeadProps>(
-  ({ className = '', children, sticky = true, ...props }, ref) => {
-    return (
-      <thead className={`${s.head} ${className}`} data-sticky={sticky} ref={ref} {...props}>
-        {children}
-      </thead>
-    );
-  },
-);
-Head.displayName = 'Head';
+export const Head = forwardRef<HTMLTableSectionElement, HeadProps>(function TableHead(
+  { className = '', children, sticky = true, ...props },
+  ref,
+) {
+  return (
+    <thead className={`${s.head} ${className}`} data-sticky={sticky} ref={ref} {...props}>
+      {children}
+    </thead>
+  );
+});
 
 type BodyProps = ComponentPropsWithRef<'tbody'>;
 
-export const Body = forwardRef<HTMLTableSectionElement, BodyProps>(({ className = '', ...props }, ref) => {
+export const Body = forwardRef<HTMLTableSectionElement, BodyProps>(function TableBody(
+  { className = '', ...props },
+  ref,
+) {
   return <tbody className={`${s.body} ${className}`} ref={ref} {...props} />;
 });
-Body.displayName = 'Body';
 
 type FootProps = ComponentPropsWithRef<'tfoot'> & {
   sticky?: boolean;
 };
 
-export const Foot = forwardRef<HTMLTableSectionElement, FootProps>(
-  ({ sticky = true, className = '', ...props }, ref) => {
-    return <tfoot className={`${s.foot} ${className}`} data-sticky={sticky} ref={ref} {...props} />;
-  },
-);
-Foot.displayName = 'Foot';
+export const Foot = forwardRef<HTMLTableSectionElement, FootProps>(function TableFoot(
+  { sticky = true, className = '', ...props },
+  ref,
+) {
+  return <tfoot className={`${s.foot} ${className}`} data-sticky={sticky} ref={ref} {...props} />;
+});
 
 type RowProps = ComponentPropsWithRef<'tr'>;
 
-export const Row = forwardRef<HTMLTableRowElement, RowProps>(({ className = '', ...props }, ref) => {
+export const Row = forwardRef<HTMLTableRowElement, RowProps>(function TableRow({ className = '', ...props }, ref) {
   const clickable = !!props.onClick;
   const role = clickable ? 'button' : undefined;
   const tabIndex = clickable ? 0 : undefined;
@@ -163,7 +164,6 @@ export const Row = forwardRef<HTMLTableRowElement, RowProps>(({ className = '', 
     />
   );
 });
-Row.displayName = 'Row';
 
 type HeadCellProps = ComponentPropsWithRef<'th'> &
   (
@@ -181,78 +181,78 @@ type HeadCellProps = ComponentPropsWithRef<'th'> &
       }
   );
 
-export const HeadCell = forwardRef<HTMLTableCellElement, HeadCellProps>(
-  ({ children, column, sortable, className = '', ...props }, ref) => {
-    const { sort, setSort } = useContext(TableContext)!;
-    const clickable = !!props.onClick || !!sortable;
-    const role = clickable ? 'button' : undefined;
-    const tabIndex = clickable ? 0 : undefined;
-    const columnHasActiveSort = sort?.column === column;
-    const cellRef = useRef<HTMLTableCellElement | null>(null);
+export const HeadCell = forwardRef<HTMLTableCellElement, HeadCellProps>(function TableHeadCell(
+  { children, column, sortable, className = '', ...props },
+  ref,
+) {
+  const { sort, setSort } = useContext(TableContext)!;
+  const clickable = !!props.onClick || !!sortable;
+  const role = clickable ? 'button' : undefined;
+  const tabIndex = clickable ? 0 : undefined;
+  const columnHasActiveSort = sort?.column === column;
+  const cellRef = useRef<HTMLTableCellElement | null>(null);
 
-    const onKeyDown: KeyboardEventHandler<HTMLTableCellElement> = (event) => {
-      if (props.onKeyDown) props.onKeyDown(event);
+  const onKeyDown: KeyboardEventHandler<HTMLTableCellElement> = (event) => {
+    if (props.onKeyDown) props.onKeyDown(event);
 
-      if (event.key === 'Enter' && cellRef.current === event.target) {
-        event.preventDefault();
-        event.stopPropagation();
-        event.target.dispatchEvent(new Event('click', { bubbles: true, cancelable: true }));
-      }
-    };
+    if (event.key === 'Enter' && cellRef.current === event.target) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.target.dispatchEvent(new Event('click', { bubbles: true, cancelable: true }));
+    }
+  };
 
-    const onClick: MouseEventHandler<HTMLTableCellElement> = (event) => {
-      if (props.onClick) props.onClick(event);
+  const onClick: MouseEventHandler<HTMLTableCellElement> = (event) => {
+    if (props.onClick) props.onClick(event);
 
-      if (!sortable || !column || !sort || !setSort) return;
+    if (!sortable || !column || !sort || !setSort) return;
 
-      if (
-        (columnHasActiveSort && sort.order === 'DESCENDING') ||
-        (!columnHasActiveSort && typeof sortable === 'object' && sortable.startingOrder === 'ASCENDING')
-      ) {
-        setSort({
-          column,
-          order: 'ASCENDING',
-        });
-      } else {
-        setSort({
-          column,
-          order: 'DESCENDING',
-        });
-      }
-    };
+    if (
+      (columnHasActiveSort && sort.order === 'DESCENDING') ||
+      (!columnHasActiveSort && typeof sortable === 'object' && sortable.startingOrder === 'ASCENDING')
+    ) {
+      setSort({
+        column,
+        order: 'ASCENDING',
+      });
+    } else {
+      setSort({
+        column,
+        order: 'DESCENDING',
+      });
+    }
+  };
 
-    return (
-      <th
-        className={`${s.headCell} ${className}`}
-        data-clickable={clickable}
-        role={role}
-        tabIndex={tabIndex}
-        ref={mergeRefs([ref, cellRef])}
-        {...props}
-        onKeyDown={onKeyDown}
-        onClick={onClick}
-      >
-        <Flex align="center" as="span" gap="s">
-          {children}
+  return (
+    <th
+      className={`${s.headCell} ${className}`}
+      data-clickable={clickable}
+      role={role}
+      tabIndex={tabIndex}
+      ref={mergeRefs([ref, cellRef])}
+      {...props}
+      onKeyDown={onKeyDown}
+      onClick={onClick}
+    >
+      <Flex align="center" as="span" gap="s">
+        {children}
 
-          {columnHasActiveSort ? (
-            <>
-              {sort?.order === 'DESCENDING' && (
-                <SvgIcon icon={<CaretCircleDown weight="duotone" />} size="xs" color="violet-10" />
-              )}
-              {sort?.order === 'ASCENDING' && (
-                <SvgIcon icon={<CaretCircleUp weight="duotone" />} size="xs" color="violet-10" />
-              )}
-            </>
-          ) : (
-            <>{sortable && <SvgIcon icon={<CaretCircleDown />} size="xs" />}</>
-          )}
-        </Flex>
-      </th>
-    );
-  },
-);
-HeadCell.displayName = 'HeadCell';
+        {columnHasActiveSort ? (
+          <>
+            {sort?.order === 'DESCENDING' && (
+              <SvgIcon icon={<CaretCircleDown weight="duotone" />} size="xs" color="violet-10" />
+            )}
+            {sort?.order === 'ASCENDING' && (
+              <SvgIcon icon={<CaretCircleUp weight="duotone" />} size="xs" color="violet-10" />
+            )}
+          </>
+        ) : (
+          <>{sortable && <SvgIcon icon={<CaretCircleDown />} size="xs" />}</>
+        )}
+      </Flex>
+    </th>
+  );
+});
 
 type CellProps = ComponentPropsWithRef<'td'> & {
   disabled?: boolean;
@@ -261,55 +261,55 @@ type CellProps = ComponentPropsWithRef<'td'> & {
   target?: HTMLAttributeAnchorTarget;
 };
 
-export const Cell = forwardRef<HTMLTableCellElement, CellProps>(
-  ({ children, disabled, href, spanAllColumns, target, className = '', ...props }, ref) => {
-    const clickable = !!props.onClick || !!href;
-    const isButton = !!props.onClick && !href;
-    const role = isButton ? 'button' : undefined;
-    const tabIndex = isButton ? (disabled ? -1 : 0) : undefined;
-    const { Link } = useNearAiUi();
-    const cellRef = useRef<HTMLTableCellElement | null>(null);
+export const Cell = forwardRef<HTMLTableCellElement, CellProps>(function TableCell(
+  { children, disabled, href, spanAllColumns, target, className = '', ...props },
+  ref,
+) {
+  const clickable = !!props.onClick || !!href;
+  const isButton = !!props.onClick && !href;
+  const role = isButton ? 'button' : undefined;
+  const tabIndex = isButton ? (disabled ? -1 : 0) : undefined;
+  const { Link } = useNearAiUi();
+  const cellRef = useRef<HTMLTableCellElement | null>(null);
 
-    const onKeyDown: KeyboardEventHandler<HTMLTableCellElement> = (event) => {
-      if (props.onKeyDown) props.onKeyDown(event);
+  const onKeyDown: KeyboardEventHandler<HTMLTableCellElement> = (event) => {
+    if (props.onKeyDown) props.onKeyDown(event);
 
-      if (event.key === 'Enter' && cellRef.current === event.target) {
-        event.preventDefault();
-        event.stopPropagation();
-        event.target.dispatchEvent(new Event('click', { bubbles: true, cancelable: true }));
-      }
-    };
+    if (event.key === 'Enter' && cellRef.current === event.target) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.target.dispatchEvent(new Event('click', { bubbles: true, cancelable: true }));
+    }
+  };
 
-    return (
-      <td
-        className={`${s.cell} ${className}`}
-        aria-disabled={disabled}
-        data-clickable={clickable}
-        role={role}
-        tabIndex={tabIndex}
-        ref={mergeRefs([ref, cellRef])}
-        {...props}
-        colSpan={spanAllColumns ? 10_000 : props.colSpan}
-        onKeyDown={onKeyDown}
-      >
-        {href ? (
-          <>
-            <Link href={href} className={s.cellAnchor} target={target}>
-              {children}
-            </Link>
+  return (
+    <td
+      className={`${s.cell} ${className}`}
+      aria-disabled={disabled}
+      data-clickable={clickable}
+      role={role}
+      tabIndex={tabIndex}
+      ref={mergeRefs([ref, cellRef])}
+      {...props}
+      colSpan={spanAllColumns ? 10_000 : props.colSpan}
+      onKeyDown={onKeyDown}
+    >
+      {href ? (
+        <>
+          <Link href={href} className={s.cellAnchor} target={target}>
+            {children}
+          </Link>
 
-            <span className={s.cellAnchorHiddenChildren} aria-hidden="true">
-              {children}
-            </span>
-          </>
-        ) : (
-          children
-        )}
-      </td>
-    );
-  },
-);
-Cell.displayName = 'Cell';
+          <span className={s.cellAnchorHiddenChildren} aria-hidden="true">
+            {children}
+          </span>
+        </>
+      ) : (
+        children
+      )}
+    </td>
+  );
+});
 
 export const PlaceholderRows = () => {
   return (

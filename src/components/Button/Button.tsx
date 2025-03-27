@@ -1,8 +1,8 @@
 import type { ComponentProps, ComponentPropsWithRef, ReactElement } from 'react';
 import { forwardRef } from 'react';
 
-import { useNearAiUi } from '../context/NearAiUi';
-import { Badge } from './Badge';
+import { useNearAiUi } from '../../context/NearAiUi';
+import { Badge } from '../Badge';
 import s from './Button.module.scss';
 
 type Fill = 'solid' | 'outline' | 'ghost';

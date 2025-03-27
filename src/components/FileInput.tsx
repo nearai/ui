@@ -1,4 +1,4 @@
-import { FileArrowUp, Paperclip } from '@phosphor-icons/react';
+import { FileArrowUp, Paperclip } from '@phosphor-icons/react/dist/ssr';
 import type { ChangeEventHandler, CSSProperties, DragEventHandler, FocusEventHandler } from 'react';
 import { forwardRef, useState } from 'react';
 

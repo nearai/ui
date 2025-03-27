@@ -1,8 +1,8 @@
 # Checkbox
 
 ```tsx
-import { Checkbox } from '~/components/lib/Checkbox';
-import { Flex } from '~/components/lib/Flex';
+import { Checkbox } from '@nearai/ui';
+import { Flex } from '@nearai/ui';
 
 ...
 
@@ -15,8 +15,8 @@ import { Flex } from '~/components/lib/Flex';
 ## Checkbox Group
 
 ```tsx
-import { Checkbox, CheckboxGroup } from '~/components/lib/Checkbox';
-import { Flex } from '~/components/lib/Flex';
+import { Checkbox, CheckboxGroup } from '@nearai/ui';
+import { Flex } from '@nearai/ui';
 
 ...
 
@@ -38,8 +38,8 @@ import { Flex } from '~/components/lib/Flex';
 To switch from checkboxes to radios, simply apply `type="radio"` to each `<Checkbox />` component (and make sure they have matching `name` attributes):
 
 ```tsx
-import { Checkbox, CheckboxGroup } from '~/components/lib/Checkbox';
-import { Flex } from '~/components/lib/Flex';
+import { Checkbox, CheckboxGroup } from '@nearai/ui';
+import { Flex } from '@nearai/ui';
 
 <CheckboxGroup aria-label="My Radio Group">
   <Flex as="label" align="center" gap="s">

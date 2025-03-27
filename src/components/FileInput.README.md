@@ -5,7 +5,7 @@ This component uses a native `<input type="file" />` tag underneath the hood. Th
 Additionally, you can pass a value for `maxFileSizeBytes` to limit the max size of each file. The default is unlimited (undefined).
 
 ```tsx
-import { FileInput } from '~/components/lib/FileInput';
+import { FileInput } from '@nearai/ui';
 
 ...
 

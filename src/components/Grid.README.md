@@ -5,8 +5,8 @@ This component helps solve common grid layout requirements. If you need a more s
 https://css-tricks.com/snippets/css/complete-guide-grid/
 
 ```tsx
-import { Grid } from '~/components/lib/Grid';
-import { Card } from '~/components/lib/Card';
+import { Grid } from '@nearai/ui';
+import { Card } from '@nearai/ui';
 
 ...
 

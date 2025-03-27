@@ -1,4 +1,4 @@
-import { Check } from '@phosphor-icons/react';
+import { Check } from '@phosphor-icons/react/dist/ssr';
 import { type ComponentPropsWithRef, forwardRef } from 'react';
 
 import s from './Checkbox.module.scss';

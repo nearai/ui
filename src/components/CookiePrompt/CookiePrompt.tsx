@@ -1,4 +1,3 @@
-import { useNearAiUi } from '../../context/NearAiUi';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import s from './CookiePrompt.module.scss';
@@ -10,7 +9,6 @@ type Props = {
 
 export const CookiePrompt = ({ cookiePolicyUrl = '/cookies' }: Props) => {
   const { cookiesPreference, setCookiesPreference } = useCookiePreferences();
-  const { Link } = useNearAiUi();
 
   if (cookiesPreference) return null;
 
@@ -19,9 +17,9 @@ export const CookiePrompt = ({ cookiePolicyUrl = '/cookies' }: Props) => {
       <Text size="text-s">
         We use our own and third-party cookies on our website to enhance your experience, analyze traffic, and for
         marketing. For more information see our&nbsp;
-        <Link target="_blank" href={cookiePolicyUrl}>
+        <Text target="_blank" href={cookiePolicyUrl} color="sand-12" size="text-s">
           Cookie Policy
-        </Link>
+        </Text>
       </Text>
 
       <div className={s.actions}>
