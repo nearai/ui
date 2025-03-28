@@ -2,6 +2,8 @@
 
 A React component library that implements the official design system of NEAR AI.
 
+[View Storybook Docs](https://nearai.github.io/ui)
+
 ## Required Peer Dependencies
 
 **React 18 || 19**
