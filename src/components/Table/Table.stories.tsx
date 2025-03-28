@@ -50,7 +50,7 @@ export const Primary: Story = {
   } satisfies Props,
   render: (args) => (
     <Table.Root {...args}>
-      <Table.Head sticky={false}>
+      <Table.Head>
         <Table.Row>
           <Table.HeadCell>ID</Table.HeadCell>
           <Table.HeadCell style={{ minWidth: '10rem' }}>Name</Table.HeadCell>
