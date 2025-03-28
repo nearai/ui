@@ -54,10 +54,6 @@ const preview: Preview = {
     docs: {
       theme,
     },
-    options: {
-      // The storySort() method is passed as raw JS and can't include any TS syntax
-      storySort: (a, b) => (a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true })),
-    },
   },
 
   decorators: [
