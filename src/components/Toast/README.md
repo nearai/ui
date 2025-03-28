@@ -9,7 +9,7 @@ The `openToast()` API is made possible with Zustand: https://github.com/pmndrs/z
 Using the `openToast` API allows you to easily open a toast from any context:
 
 ```tsx
-import { openToast } from '~/components/lib/Toast';
+import { openToast } from '@nearai/ui';
 
 ...
 
@@ -29,7 +29,7 @@ import { openToast } from '~/components/lib/Toast';
 You can pass other options too:
 
 ```tsx
-import { Pizza } from '@phosphor-icons/react';
+import { Pizza } from '@phosphor-icons/react/dist/ssr';
 
 <Button
   onClick={() =>

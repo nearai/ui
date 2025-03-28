@@ -1,0 +1,23 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './FileInput.stories';
+
+<Meta of={Stories} name="React Hook Form" />
+
+# File Input + React Hook Form
+
+```tsx
+import { Controller } from 'react-hook-form';
+import { FileInput } from '@nearai/ui';
+
+<Controller
+  control={form.control}
+  name="artwork"
+  rules={{
+    required: 'Please select an image',
+  }}
+  render={({ field, fieldState }) => (
+    <FileInput label="Event Artwork" accept="image/*" error={fieldState.error?.message} {...field} />
+  )}
+/>;
+```

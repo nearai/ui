@@ -1,2 +1,2 @@
-export * as CookiePrompt from './CookiePrompt';
+export * from './CookiePrompt';
 export * from './hooks';

@@ -6,7 +6,6 @@ import './styles/globals.scss';
 
 export * from './components/Accordion';
 export * from './components/Article';
-export * from './components/AssistiveText';
 export * from './components/Badge';
 export * from './components/Banner';
 export * from './components/BreakpointDisplay';
@@ -16,7 +15,6 @@ export * from './components/Checkbox';
 export * from './components/Combobox';
 export * from './components/ConditionalLink';
 export * from './components/Container';
-export * from './components/ContentWithImage';
 export * from './components/CookiePrompt';
 export * from './components/Dialog';
 export * from './components/Dropdown';
@@ -25,12 +23,9 @@ export * from './components/Flex';
 export * from './components/Form';
 export * from './components/Grid';
 export * from './components/HorizontalRule';
-export * from './components/IconCircle';
 export * from './components/ImageIcon';
 export * from './components/Input';
-export * from './components/InputTextarea';
 export * from './components/NoSsr';
-export * from './components/Pattern';
 export * from './components/Placeholder';
 export * from './components/Section';
 export * from './components/Slider';
@@ -46,7 +41,6 @@ export * from './components/Tooltip';
 // Hooks
 
 export { useTheme } from 'next-themes';
-export * from './components/CookiePrompt/hooks';
 export * from './hooks/debounce';
 
 // Contexts

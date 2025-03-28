@@ -41,4 +41,6 @@ export function numberInputHandler(
   if (validCharacters !== event.currentTarget.value) {
     event.currentTarget.value = validCharacters;
   }
+
+  console.log(event.currentTarget.value);
 }

@@ -1,8 +1,10 @@
-import React from 'react';
-import type { Preview } from '@storybook/react';
-import { NearAiUiProvider } from '../src';
-import { theme } from './theme';
 import './styles.scss';
+
+import type { Preview } from '@storybook/react';
+import React from 'react';
+
+import { NearAiUiProvider, Toaster } from '../src';
+import { theme } from './theme';
 
 const useRouter = () => {
   return {
@@ -52,7 +54,12 @@ const preview: Preview = {
     docs: {
       theme,
     },
+    options: {
+      // The storySort() method is passed as raw JS and can't include any TS syntax
+      storySort: (a, b) => (a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true })),
+    },
   },
+
   decorators: [
     (Story, context) => (
       <NearAiUiProvider
@@ -62,7 +69,7 @@ const preview: Preview = {
           useRouter: useRouter,
         }}
       >
-        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+        <Toaster />
         <Story />
       </NearAiUiProvider>
     ),

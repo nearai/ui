@@ -1,0 +1,72 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './Toast.stories';
+
+<Meta of={Stories} />
+
+# Toast
+
+Built with the [Radix UI Toast](https://www.radix-ui.com/docs/primitives/components/toast) primitive in combination with [Zustand](https://github.com/pmndrs/zustand).
+
+<Canvas of={Stories.Primary} />
+
+## Example
+
+Using the `openToast` API allows you to easily open a toast from any React or non-React context.
+
+```tsx
+import { openToast } from '@nearai/ui';
+
+...
+
+<Button
+  label="Open Toast"
+  onClick={() =>
+    openToast({
+      type: 'error',
+      title: 'Toast Title',
+      description: 'This is a great toast description.',
+    })
+  }
+/>
+```
+
+You can pass other options too:
+
+```tsx
+import { Pizza } from '@phosphor-icons/react/dist/ssr';
+
+<Button
+  label="Open Toast"
+  onClick={() =>
+    openToast({
+      type: 'success', // success | info | error
+      title: 'Toast Title',
+      description: 'This is a great toast description.',
+      icon: Pizza, // imported phosphor icon reference
+      duration: 20000, // milliseconds (pass Infinity to disable auto close)
+      action: () => {
+        alert(1);
+      },
+      actionText: 'Do Action',
+    })
+  }
+/>;
+```
+
+## Deduplicate
+
+If you need to ensure only a single instance of a toast is ever displayed at once, you can deduplicate by passing a unique `id` key. If a toast with the passed `id` is currently open, a new toast will not be opened:
+
+```tsx
+<Button
+  label="Open Toast"
+  onClick={() =>
+    openToast({
+      id: 'my-unique-toast',
+      title: 'Toast Title',
+      description: 'This is a great toast description.',
+    })
+  }
+/>
+```

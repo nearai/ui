@@ -1,4 +1,4 @@
-import { CaretDown } from '@phosphor-icons/react';
+import { CaretDown } from '@phosphor-icons/react/dist/ssr';
 import * as Primitive from '@radix-ui/react-accordion';
 import type { ComponentProps } from 'react';
 import { forwardRef } from 'react';
@@ -13,17 +13,18 @@ type ContentProps = ComponentProps<typeof Primitive.Content>;
 type TriggerProps = ComponentProps<typeof Primitive.Trigger>;
 type ItemProps = ComponentProps<typeof Primitive.Item>;
 
-export const Root = forwardRef<HTMLDivElement, RootProps>(({ gap = 'm', ...props }, ref) => {
+export const Root = forwardRef<HTMLDivElement, RootProps>(function AccordionRoot({ gap = 'm', ...props }, ref) {
   return <Primitive.Root className={s.root} data-gap={gap} ref={ref} {...props} />;
 });
-Root.displayName = 'Root';
 
-export const Item = forwardRef<HTMLDivElement, ItemProps>((props, ref) => {
+export const Item = forwardRef<HTMLDivElement, ItemProps>(function AccordionItem(props, ref) {
   return <Primitive.Item className={s.item} ref={ref} {...props} />;
 });
-Item.displayName = 'Item';
 
-export const Trigger = forwardRef<HTMLButtonElement, TriggerProps>(({ children, ...props }, ref) => {
+export const Trigger = forwardRef<HTMLButtonElement, TriggerProps>(function AccordionTrigger(
+  { children, ...props },
+  ref,
+) {
   return (
     <Primitive.Header className={s.header}>
       <Primitive.Trigger className={s.trigger} ref={ref} {...props}>
@@ -35,13 +36,11 @@ export const Trigger = forwardRef<HTMLButtonElement, TriggerProps>(({ children, 
     </Primitive.Header>
   );
 });
-Trigger.displayName = 'Trigger';
 
-export const Content = forwardRef<HTMLDivElement, ContentProps>(({ children, ...props }, ref) => {
+export const Content = forwardRef<HTMLDivElement, ContentProps>(function AccordionContent({ children, ...props }, ref) {
   return (
     <Primitive.Content className={s.content} ref={ref} {...props}>
       <div className={s.contentContainer}>{children}</div>
     </Primitive.Content>
   );
 });
-Content.displayName = 'Content';

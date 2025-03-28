@@ -1,0 +1,23 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './Combobox.stories';
+
+<Meta of={Stories} name="React Hook Form" />
+
+# Combobox + React Hook Form
+
+```tsx
+import { Controller } from 'react-hook-form';
+import { Combobox } from '@nearai/ui';
+
+<Controller
+  control={form.control}
+  name="myCombobox"
+  rules={{
+    required: 'Please select an option',
+  }}
+  render={({ field, fieldState }) => (
+    <Combobox label="My Combobox" items={items} error={fieldState.error?.message} {...field} />
+  )}
+/>;
+```

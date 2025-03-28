@@ -1,4 +1,4 @@
-import { X } from '@phosphor-icons/react';
+import { X } from '@phosphor-icons/react/dist/ssr';
 import * as Primitive from '@radix-ui/react-toast';
 import type { ComponentProps, ReactElement } from 'react';
 import { forwardRef } from 'react';

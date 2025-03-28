@@ -1,0 +1,14 @@
+@use '../../styles/mixins';
+
+.flex {
+  display: flex;
+  @include mixins.breakpointProperty('flex-align', 'align-items', normal);
+  @include mixins.breakpointProperty('flex-direction', 'flex-direction', row);
+  @include mixins.breakpointProperty('flex-wrap', 'flex-wrap', nowrap);
+  @include mixins.breakpointProperty('flex-gap', 'gap', 0);
+  @include mixins.breakpointProperty('flex-justify', 'justify-content', normal);
+}
+
+label.flex {
+  cursor: pointer;
+}

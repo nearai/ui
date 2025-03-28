@@ -1,3 +1,4 @@
+import { X } from '@phosphor-icons/react/dist/ssr';
 import { type ReactNode, useCallback, useEffect, useRef } from 'react';
 
 import { Button } from '../Button';
@@ -12,7 +13,7 @@ type Props = {
   */
 
   bannerId: string;
-  actions: ReactNode;
+  actions?: ReactNode;
   message: ReactNode;
 };
 
@@ -21,11 +22,6 @@ export const Banner = ({ actions, bannerId, message }: Props) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   const updateBannerHeightProperty = useCallback(() => {
-    /*
-      Since the mobile navigation menu relies on "position: fixed;", we need to calculate a dynamic 
-      offset height based on the banner height and current window scroll position.
-    */
-
     const element = ref.current;
     if (!element) return;
 
@@ -60,19 +56,18 @@ export const Banner = ({ actions, bannerId, message }: Props) => {
 
   return (
     <div className={s.banner} ref={ref}>
-      <Text weight="500" size="text-s">
+      <Text weight="500" size="text-s" color="sand-12">
         {message}
       </Text>
 
-      <div className={s.actions}>{actions}</div>
+      {actions && <div className={s.actions}>{actions}</div>}
 
       <Button
-        type="button"
         onClick={hideBanner}
         label="Close"
-        icon={<i className="ph-bold ph-x" />}
+        icon={<X weight="bold" />}
         size="small"
-        className="close-button"
+        variant="secondary"
         fill="ghost"
       />
     </div>
