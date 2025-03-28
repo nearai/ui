@@ -1,6 +1,6 @@
 import { create } from '@storybook/theming';
 
-// @ts-expect-error
+// @ts-expect-error: This import is correct
 import NearAiLogo from './near-ai-logo.svg';
 
 export const theme = create({

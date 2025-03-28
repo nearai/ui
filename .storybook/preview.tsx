@@ -54,7 +54,12 @@ const preview: Preview = {
     docs: {
       theme,
     },
+    options: {
+      // The storySort() method is passed as raw JS and can't include any TS syntax
+      storySort: (a, b) => (a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true })),
+    },
   },
+
   decorators: [
     (Story, context) => (
       <NearAiUiProvider
@@ -65,7 +70,6 @@ const preview: Preview = {
         }}
       >
         <Toaster />
-        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <Story />
       </NearAiUiProvider>
     ),

@@ -1,9 +1,10 @@
+import path from 'node:path';
+
 import { includeIgnoreFile } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import path from 'node:path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -35,6 +36,7 @@ const eslintConfig = [
       ],
       'react/no-unescaped-entities': [2, { forbid: ['>', '}'] }],
       '@next/next/no-img-element': 'off',
+      '@next/next/no-html-link-for-pages': 'off',
     },
   },
   {

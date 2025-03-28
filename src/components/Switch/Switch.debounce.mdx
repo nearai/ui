@@ -1,0 +1,27 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './Switch.stories';
+
+<Meta of={Stories} name="Debounce" />
+
+# Switch + Debounce
+
+Sometimes it makes sense to debounce a switch toggle change event. We can allow a user to visually toggle the switch rapidly, but only respond to the change event once by using the `useDebouncedValue()` hook.
+
+```tsx
+import { useDebouncedValue, Switch } from '@nearai/ui';
+import { useEffect, useState } from 'react';
+
+...
+
+const [switchValue, setSwitchValue] = useState(false);
+const debouncedSwitchValue = useDebouncedValue(switchValue, 300);
+
+useEffect(() => {
+  // ...
+}, [debouncedSwitchValue]);
+
+...
+
+<Switch aria-label="My Toggle" checked={switchValue} onCheckedChange={setSwitchValue} />
+```

@@ -1,4 +1,4 @@
-import { NoSsr } from './NoSsr';
+import { NoSsr } from '../NoSsr';
 
 type Props = {
   date?: Date | null;

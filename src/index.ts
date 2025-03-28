@@ -41,7 +41,6 @@ export * from './components/Tooltip';
 // Hooks
 
 export { useTheme } from 'next-themes';
-export * from './components/CookiePrompt/hooks';
 export * from './hooks/debounce';
 
 // Contexts

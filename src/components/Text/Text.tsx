@@ -1,8 +1,8 @@
 import type { ComponentProps, ComponentPropsWithRef } from 'react';
 import { type CSSProperties, forwardRef } from 'react';
 
-import { useNearAiUi } from '../context/NearAiUi';
-import { type ThemeColor, type ThemeFontSize } from '../utils/theme';
+import { useNearAiUi } from '../../context/NearAiUi';
+import { type ThemeColor, type ThemeFontSize } from '../../utils/theme';
 import s from './Text.module.scss';
 
 type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label';
